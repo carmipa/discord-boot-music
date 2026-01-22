@@ -1,0 +1,6 @@
+# Propriedades customizadas para o Firebase
+firebase:
+  # Caminho para o arquivo JSON da sua Service Account
+  service-account-path: classpath:firebase-admin-sdk.json
+  # URL do seu projeto Firebase Realtime Database (se for usar DB)
+  database-url: https://SEU_PROJETO_ID.firebaseio.com

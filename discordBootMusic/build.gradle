@@ -1,0 +1,48 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.0.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'br.com.boot'
+version = '0.0.1-SNAPSHOT'
+description = 'discordBootMusic'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    // === DEPENDÊNCIAS WEB e SEGURANÇA ===
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // === YOUTUBE DATA API ===
+    // Core da Google API Client Library
+    implementation 'com.google.api-client:google-api-client:2.5.0'
+    // Biblioteca de Serviço Específica do YouTube Data API v3
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev20230822-2.0.0'
+    // OAuth Helpers (Opcional, mas útil)
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.34.1'
+
+    // === FIREBASE ADMIN SDK ===
+    // SDK para se comunicar com Firestore/Realtime DB e armazenar tokens
+    implementation 'com.google.firebase:firebase-admin:9.2.0'
+
+    // === DESENVOLVIMENTO E TESTES ===
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
