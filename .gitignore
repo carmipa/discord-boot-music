@@ -52,3 +52,12 @@ state/*.json
 # Cache do bot (dedup/etag/translation)
 state.json
 history.json
+
+# Artefatos locais de assistentes de IA: ficam so na maquina, nunca no repositorio.
+.claude/
+.codex/
+.gemini/
+.cursor/
+.windsurf/
+.continue/
+.aider*
